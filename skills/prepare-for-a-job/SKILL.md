@@ -17,7 +17,7 @@ Help the signed-in user get ready for a specific job using Interview Trix tools.
 1. Call `get_entitlements`. Summarize plan, remaining credits, and whether AI mock interviews and ATS are allowed. If they only asked about plan or credits, stop after this step.
 2. If they shared a job description (JD), keep it for ATS. If they want ATS or a mock and there is no JD, ask for the JD or target role before creating an interview.
 3. Call `list_resumes`. If they need a resume for this role:
-   - Call `start_resume_flow` (or ask one path question): retarget saved resume, brand-new from scratch, upload file, or merge attachment into saved resume — follow `manage-resumes`.
+   - Call `start_resume_flow`, then ask one path question in plain text (retarget saved resume, brand-new from scratch, upload file, or merge attachment into saved resume) — follow `manage-resumes`. There is no inline picker here; list the paths as text.
    - If none exist and they chose from scratch: `list_resume_templates`, then `start_resume_intake` if facts are missing, then `create_resume_draft` with `creationMode: "fresh"` and `factsProvenance: "intake"`.
    - If optimizing a saved resume: `create_resume_draft` with `creationMode: "retarget"`, `retargetDepth: "deep"`, `sourceResumeId`, `targetRole`, and `jobDescription` (50+ chars).
    - In voice: map plain requests (“add skills”, “give me the link”) to tools — see **manage-resumes** voice section. Never ask the user to name tools or paste `resumeId`.

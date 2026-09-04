@@ -11,11 +11,11 @@ Create a draft AI mock on Interview Trix and send a join link. Do not run the li
 
 1. Call `get_entitlements`. If AI mock is not allowed or credits are insufficient, explain that, show the upgrade URL when the tool provides one, and stop.
 2. Confirm `role` (job title). If missing, ask. Optional: years of `experience`, `targetCompany`, `jobDescription`, `language` (`en` or `hi`).
-3. **Ask the user to pick the duration — never choose it yourself and never default to 30.** Call `start_interview_flow` (pass `role`, and `targetCompany`/`jobDescription` if known). On ChatGPT this shows a 15/30 picker widget; on other clients ask one short question ("15 or 30 minutes?"). Wait for their choice. 30 is only offered on Tech Pro/Enterprise. Only skip this step if the user already stated a specific duration in their request.
+3. **Ask the user to pick the duration — never choose it yourself and never default to 30.** Call `start_interview_flow` (pass `role`, and `targetCompany`/`jobDescription` if known), then ask one short question in plain text ("15 or 30 minutes?") and wait for their choice. 30 is only offered on Tech Pro/Enterprise. Only skip this step if the user already stated a specific duration in their request.
 4. Resolve a resume: `resumeId` they gave, else `list_resumes` (newest or named). If there is no resume, follow `manage-resumes` intake (collect details in chat, then `create_resume_draft`). Do not start the mock until a resume exists.
 5. After the user picks a duration, call `initialize_mock_interview` with `role`, that chosen **`duration`**, **`resumeId`** (use the active resume from this chat when they just created one), and optional `jobDescription`, `targetCompany`. **Do not** send `department` or `discipline` unless the user gave an exact allowed value — omitting them is fine.
 6. Only say the interview was created after the tool returns `success: true` with `interviewId` and a join URL. If the tool errors, explain the error — do not pretend it worked.
-7. In the **same reply**, paste the full join URL from `Join link (copy or open):` and the `interviewId`. Do not tell the user to ask again for the link. The actions widget may also show a Start interview button.
+7. In the **same reply**, paste the full join URL from `Join link (copy or open):` and the `interviewId` as plain text/markdown. Do not tell the user to ask again for the link.
 8. Say they must open Interview Trix to take the interview (camera/mic on that site).
 
 ## After create
