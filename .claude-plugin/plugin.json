@@ -1,0 +1,12 @@
+{
+  "name": "interviewtrix",
+  "description": "Interview Trix connector with skills for resumes, ATS scoring, and AI mock interviews.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Anup Kumar",
+    "email": "info@interviewtrix.com"
+  },
+  "homepage": "https://interviewtrix.com",
+  "repository": "https://github.com/anupvrj/interviewtrix-claude-plugin",
+  "license": "MIT"
+}

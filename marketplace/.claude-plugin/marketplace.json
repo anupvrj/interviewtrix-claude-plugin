@@ -1,0 +1,14 @@
+{
+  "name": "anup-kumar-plugins",
+  "owner": {
+    "name": "Anup Kumar",
+    "email": "info@interviewtrix.com"
+  },
+  "plugins": [
+    {
+      "name": "interviewtrix",
+      "source": "https://github.com/anupvrj/interviewtrix-claude-plugin",
+      "description": "Interview Trix connector with skills for resumes, ATS scoring, and AI mock interviews."
+    }
+  ]
+}
