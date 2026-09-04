@@ -7,7 +7,7 @@
   "plugins": [
     {
       "name": "interviewtrix",
-      "source": "https://github.com/anupvrj/interviewtrix-claude-plugin",
+      "source": "./",
       "description": "Interview Trix connector with skills for resumes, ATS scoring, and AI mock interviews."
     }
   ]
